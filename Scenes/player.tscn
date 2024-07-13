@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4x864buw8j4n"]
+
+[ext_resource type="Texture2D" uid="uid://cav4va60f6vtx" path="res://Assets/Sprites/De'aaron_Spritesheet.png" id="1_ben7s"]
+[ext_resource type="Script" path="res://Scripts/playerMovement.gd" id="1_sawb0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv5ff"]
+atlas = ExtResource("1_ben7s")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jocoi"]
+atlas = ExtResource("1_ben7s")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dunx1"]
+atlas = ExtResource("1_ben7s")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuu0v"]
+atlas = ExtResource("1_ben7s")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2855s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv5ff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jocoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dunx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuu0v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqkr0"]
+size = Vector2(17, 69)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_sawb0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2855s")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -1.5)
+shape = SubResource("RectangleShape2D_iqkr0")
