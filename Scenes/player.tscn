@@ -1,66 +1,66 @@
 [gd_scene load_steps=14 format=3 uid="uid://b4x864buw8j4n"]
 
-[ext_resource type="Texture2D" uid="uid://b78oa05lneemn" path="res://Assets/Sprites/De'aaron_Spritesheet.png" id="1_ben7s"]
+[ext_resource type="Texture2D" uid="uid://d3wio85f4mn0q" path="res://Assets/Sprites/De'aaron_Spritesheet.png" id="1_ben7s"]
 [ext_resource type="Script" path="res://Scripts/playerMovement.gd" id="1_sawb0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rf4rl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mb8ps"]
 atlas = ExtResource("1_ben7s")
-region = Rect2(0, 0, 128, 128)
+region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ve25j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pf65"]
 atlas = ExtResource("1_ben7s")
-region = Rect2(128, 0, 128, 128)
+region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cm042"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e23mo"]
 atlas = ExtResource("1_ben7s")
-region = Rect2(256, 0, 128, 128)
+region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gggde"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5m1n"]
 atlas = ExtResource("1_ben7s")
-region = Rect2(384, 0, 128, 128)
+region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a2us1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mebya"]
 atlas = ExtResource("1_ben7s")
-region = Rect2(0, 256, 128, 128)
+region = Rect2(0, 128, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_komag"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgutp"]
 atlas = ExtResource("1_ben7s")
-region = Rect2(0, 128, 128, 128)
+region = Rect2(0, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7f68c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_krped"]
 atlas = ExtResource("1_ben7s")
-region = Rect2(128, 128, 128, 128)
+region = Rect2(64, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rdvn1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbwj5"]
 atlas = ExtResource("1_ben7s")
-region = Rect2(256, 128, 128, 128)
+region = Rect2(128, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qj86r"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5twd"]
 atlas = ExtResource("1_ben7s")
-region = Rect2(384, 128, 128, 128)
+region = Rect2(192, 64, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_v5vn1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0le0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rf4rl")
+"texture": SubResource("AtlasTexture_mb8ps")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ve25j")
+"texture": SubResource("AtlasTexture_7pf65")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cm042")
+"texture": SubResource("AtlasTexture_e23mo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gggde")
+"texture": SubResource("AtlasTexture_j5m1n")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 6.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a2us1")
+"texture": SubResource("AtlasTexture_mebya")
 }],
 "loop": true,
 "name": &"Jump",
@@ -68,34 +68,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_komag")
+"texture": SubResource("AtlasTexture_pgutp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7f68c")
+"texture": SubResource("AtlasTexture_krped")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rdvn1")
+"texture": SubResource("AtlasTexture_pbwj5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qj86r")
+"texture": SubResource("AtlasTexture_g5twd")
 }],
 "loop": true,
 "name": &"Run",
-"speed": 6.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iqkr0"]
-size = Vector2(17, 69)
+size = Vector2(12, 34)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_sawb0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
-sprite_frames = SubResource("SpriteFrames_v5vn1")
-animation = &"Jump"
+sprite_frames = SubResource("SpriteFrames_m0le0")
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -1.5)
+z_index = 5
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_iqkr0")
