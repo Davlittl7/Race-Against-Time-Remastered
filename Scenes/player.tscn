@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4x864buw8j4n"]
+[gd_scene load_steps=14 format=3 uid="uid://b4x864buw8j4n"]
 
 [ext_resource type="Texture2D" uid="uid://b78oa05lneemn" path="res://Assets/Sprites/De'aaron_Spritesheet.png" id="1_ben7s"]
 [ext_resource type="Script" path="res://Scripts/playerMovement.gd" id="1_sawb0"]
@@ -19,6 +19,26 @@ region = Rect2(256, 0, 128, 128)
 atlas = ExtResource("1_ben7s")
 region = Rect2(384, 0, 128, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2us1"]
+atlas = ExtResource("1_ben7s")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_komag"]
+atlas = ExtResource("1_ben7s")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f68c"]
+atlas = ExtResource("1_ben7s")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdvn1"]
+atlas = ExtResource("1_ben7s")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qj86r"]
+atlas = ExtResource("1_ben7s")
+region = Rect2(384, 128, 128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_v5vn1"]
 animations = [{
 "frames": [{
@@ -37,6 +57,31 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2us1")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_komag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7f68c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdvn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qj86r")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iqkr0"]
@@ -48,7 +93,7 @@ script = ExtResource("1_sawb0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
 sprite_frames = SubResource("SpriteFrames_v5vn1")
-animation = &"Idle"
+animation = &"Jump"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
