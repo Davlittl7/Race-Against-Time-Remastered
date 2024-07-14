@@ -36,7 +36,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 7.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iqkr0"]
@@ -46,6 +46,7 @@ size = Vector2(17, 69)
 script = ExtResource("1_sawb0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
 sprite_frames = SubResource("SpriteFrames_2855s")
 autoplay = "default"
 
