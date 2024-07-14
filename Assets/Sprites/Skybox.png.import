@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b78oa05lneemn"
-path="res://.godot/imported/De'aaron_Spritesheet.png-687242a406b23ad26288170983886cd2.ctex"
+uid="uid://cpnbdvc7yd52o"
+path="res://.godot/imported/Skybox.png-b319c0ced64311ea9e2c320ba8ba3744.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/De'aaron_Spritesheet.png"
-dest_files=["res://.godot/imported/De'aaron_Spritesheet.png-687242a406b23ad26288170983886cd2.ctex"]
+source_file="res://Assets/Sprites/Skybox.png"
+dest_files=["res://.godot/imported/Skybox.png-b319c0ced64311ea9e2c320ba8ba3744.ctex"]
 
 [params]
 
